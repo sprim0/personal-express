@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Communal Cookie Jar</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Communal Cookie Jar</h1>
+  <h2>What's your favorite cookie?</h2>
+  <h3>Add a cookie name cookie jar & take one before you go!</h3>
+
+
+  <h3>Cookie List</h3>
+
+  <ul class="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <li class="message">
+      <span><%= messages[i].name %></span>
+      <span><%= messages[i].ingredients %></span>
+      <span><%= messages[i].thumbDown %></span>
+      
+      <span><button class="thumbs-down" aria-hidden="true">Take Cookie</button></span>
+      
+    </li>
+  <% } %>
+  </ul>
+
+  <h2>Add your cookie contribution!</h2>
+
+  <form action="/createCookieContribution" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <!-- <select name="dietary">
+      <option value="gluten">Gluten-Free</option>
+      <option value="dairy">Dairy-Free</option>
+      <option value="sugar">Sugar-Free</option>
+      <option value="vegan">Vegan</option>
+      <option value="nuts">Nut-Free</option>
+    </select> -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
